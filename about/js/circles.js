@@ -79,41 +79,7 @@
         pathFactor = this._percentage / step,
         numberFactor = this._number / step;
 
-      if (this._percentage <= (1 + pathFactor)) {
-        this._canAnimate = false;
-      } else {
-        this._canAnimate   = true;
-        this._pathFactor   = pathFactor;
-        this._numberFactor = numberFactor;
-      }
-    },
-
-    _animate: function() {
-      var i      = 1,
-        self     = this,
-        path     = this._el.getElementsByTagName('path')[1],
-        numberEl = this._getNumberElement(),
-
-        isInt    = this._number % 1 === 0,
-
-        requestAnimFrame = window.requestAnimationFrame       ||
-                           window.webkitRequestAnimationFrame ||
-                           window.mozRequestAnimationFrame    ||
-                           window.oRequestAnimationFrame      ||
-                           window.msRequestAnimationFrame     ||
-                           function (callback) {
-                               setTimeout(callback, self._interval);
-                           },
-
-        animate = function() {
-          var percentage   = self._pathFactor * i,
-            nextPercentage = self._pathFactor * (i + 1),
-            number         = self._numberFactor * i,
-            canContinue    = true;
-          if (isInt) {
-            number = Math.round(number);
-          }
-          if (nextPercentage > self._percentage) {
+      if (this._percentage <= 1="==" (1="" +="" pathfactor))="" {="" this._cananimate="false;" }="" else="" this._pathfactor="pathFactor;" this._numberfactor="numberFactor;" },="" _animate:="" function()="" var="" i="1," self="this," path="this._el.getElementsByTagName('path')[1]," numberel="this._getNumberElement()," isint="this._number" %="" 0,="" requestanimframe="window.requestAnimationFrame" ||="" window.webkitrequestanimationframe="" window.mozrequestanimationframe="" window.orequestanimationframe="" window.msrequestanimationframe="" function="" (callback)="" settimeout(callback,="" self._interval);="" animate="function()" percentage="self._pathFactor" *="" i,="" nextpercentage="self._pathFactor" (i="" 1),="" number="self._numberFactor" cancontinue="true;" if="" (isint)="" (nextpercentage=""> self._percentage) {
             percentage  = self._percentage;
             number      = self._number;
             canContinue = false;
@@ -167,7 +133,7 @@
     },
 
     _generatePath: function(percentage, open, color) {
-      return '<path fill="transparent" stroke="' + color + '" stroke-width="' + this._strokeWidth + '" d="' + this._calculatePath(percentage, open) + '"/>';
+      return '<path fill="transparent" stroke="' + color + '" stroke-width="' + this._strokeWidth + '" d="' + this._calculatePath(percentage, open) + '"></path>';
     },
 
     _calculatePath: function(percentage, open) {
@@ -204,4 +170,4 @@
   Circles.create = function(options) {
     return new Circles(options);
   };
-})();
+})();</=>
